@@ -12,7 +12,7 @@ const QuoteContainer = () => {
           - Robert C. Martin
         </div>
       </div>
-      <div className="h-14 w-14 relative border hidden md:block top-10 right-4"></div>
+      <div className="h-14 w-14 relative border hidden top-10 md:inline-flex left-5"></div>
     </div>
   );
 };

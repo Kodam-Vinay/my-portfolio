@@ -1,15 +1,11 @@
+import HeadingReusableCode from "../../utils/HeadingReusableCode";
 import DesignBackgroundImage1 from "../svgs/DesignBackgroundImage1";
 import DesignBackgroundImage2 from "../svgs/DesignBackgroundImage2";
 
 const Skills = () => {
   return (
     <div className="font-fira p-1 xs:p-4 mt-4 sm:px-14 md:px-[80px] lg:px-[160px]">
-      <div className="flex items-center">
-        <h1 className="text-2xl md:text-3xl font-bold font-fira text-white">
-          <span className="text-blue-500">#</span>Skills
-        </h1>
-        <hr className="w-[40%] sm:w-[30%] md:w-[10%] ml-4 border-blue-500 border-1" />
-      </div>
+      <HeadingReusableCode name="Skills" />
 
       <div className="skills">
         <div className="hidden md:flex flex-col p-3 md:flex-row md:justify-between mt-4">
