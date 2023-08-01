@@ -17,7 +17,7 @@ const Home = () => {
     };
   }, []);
   return (
-    <div className="font-fira p-3 flex flex-col items-center md:items-start md:flex-row md:justify-around md:px-20">
+    <div className="font-fira p-3 flex flex-col items-center md:items-start md:flex-row md:justify-around md:px-20 lg:px-40 xl:px-20">
       <div className="md:w-[500px] space-y-5 mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-white mt-10">
           Vinay is a{" "}
@@ -42,16 +42,16 @@ const Home = () => {
       </div>
       <div className="mt-4 static m-auto">
         <div className="flex">
-          <div className="relative top-12 md:top-[85px] md:left-20">
+          <div className="relative top-10 left-5 xs:top-5 xs:left-12 sm:left-12 sm:top-10 md:top-[70px] md:left-5 lg:left-4 lg:top-24 xl:left-16">
             <DesignBackgroundImage1 />
           </div>
           <img
             src="https://res.cloudinary.com/dwgpba5n2/image/upload/v1690881986/portfolio/1660810700344-01_jd0dxs_z2xcdd_new_ifhryb.png"
             alt="bgImage"
-            className="relative mx-auto right-24 md:right-10 h-80 md:h-96"
+            className="relative h-48 xs:h-52 sm:h-60 md:h-80 lg:h-96 mx-auto right-[70px] xs:right-10 md:right-[72px] lg:right-24 xl:right-10"
             title="profile-image"
           />
-          <div className="relative right-44 top-36 md:right-32 md:top-[180px]">
+          <div className="relative right-32 top-24 md:right-32 md:top-[180px] lg:right-52 xl:right-36">
             <DesignBackgroundImage2 />
           </div>
         </div>

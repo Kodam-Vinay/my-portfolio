@@ -8,7 +8,7 @@ import Skills from "./components/Skills";
 
 function App() {
   return (
-    <div className="container bg-[#282C33] h-screen overflow-y-auto flex flex-col">
+    <div className="bg-[#282C33] h-screen overflow-y-auto flex flex-col">
       <div className="hidden md:flex flex-col w-10 items-center absolute space-y-2">
         <StraightLine />
         <ContactUsIcons />
