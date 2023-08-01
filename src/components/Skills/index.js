@@ -22,7 +22,7 @@ const Skills = () => {
             <DesignBackgroundImage2 className="h-10" />
           </div>
         </div>
-        <ul className="p-0 flex flex-col sm:flex-row flex-wrap md:space-x-5">
+        <ul className="p-0 flex flex-col items-center sm:flex-row flex-wrap md:items-start md:space-x-5">
           <div></div>
           <div className="skills-box-css languages order-2">
             <div className="border p-2">
