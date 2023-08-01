@@ -1,0 +1,12 @@
+.add-transition {
+  animation: newAnimation 5s ease 5s infinite alternate both;
+}
+
+@keyframes newAnimation {
+  0% {
+    /* position: ; */
+  }
+  100% {
+    color: yellow;
+  }
+}
