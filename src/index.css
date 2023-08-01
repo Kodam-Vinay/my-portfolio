@@ -18,7 +18,11 @@ code {
 @tailwind utilities;
 
 @layer components {
-  .skills-box {
-    @apply md:mx-2 my-4 min-w-[200px];
+  .skills-box-css {
+    @apply md:mx-2 my-4 min-w-[200px] w-full flex flex-col justify-center p-2 font-bold text-xl text-white;
+  }
+
+  .apply-css-to-skills-inside-box {
+    @apply border w-full text-white p-2 space-y-2;
   }
 }

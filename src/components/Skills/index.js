@@ -24,32 +24,30 @@ const Skills = () => {
         </div>
         <ul className="p-0 flex flex-col sm:flex-row flex-wrap md:space-x-5">
           <div></div>
-          <div className="skills-box languages order-2">
-            <div className="border h-10 w-full flex flex-col justify-center p-2 font-bold text-xl text-white">
+          <div className="skills-box-css languages order-2">
+            <div className="border p-2">
               <h1>Languages</h1>
             </div>
-            <div className="border  w-full text-white p-2">
+            <div className="apply-css-to-skills-inside-box">
               <p>- Javascript</p>
               <p>- Python</p>
               <p>- Java</p>
             </div>
           </div>
 
-          <div className="skills-box database order-1">
-            <div className="border h-10 w-full flex flex-col justify-center p-2 font-bold text-xl text-white">
+          <div className="skills-box-css database order-1">
+            <div className="border p-2">
               <h1>Databases</h1>
             </div>
-            <div className="border w-full text-white p-2">
+            <div className="apply-css-to-skills-inside-box">
               <p>- SQLite</p>
               <p>- MongoDb</p>
             </div>
           </div>
 
-          <div className="skills-box tools order-3">
-            <div className="border h-10 w-full flex flex-col justify-center p-2 font-bold text-xl text-white">
-              <h1>Tools</h1>
-            </div>
-            <div className="border w-full text-white p-2">
+          <div className="skills-box-css tools order-3">
+            <div className="border p-2">Tools</div>
+            <div className="apply-css-to-skills-inside-box">
               <p>- VsCode</p>
               <p>- Ubuntu</p>
               <p>- Font Awesome</p>
@@ -59,22 +57,20 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="skills-box frameworks order-2">
-            <div className="border h-10 w-full flex flex-col justify-center p-2 font-bold text-xl text-white">
-              <h1>Frameworks & Libraries</h1>
-            </div>
-            <div className="border w-full text-white p-2">
+          <div className="skills-box-css frameworks order-2">
+            <div className="border p-2">Frameworks & Libraries</div>
+            <div className="apply-css-to-skills-inside-box">
               <p>- React.js</p>
               <p>- Node.js</p>
               <p>- Express.js</p>
             </div>
           </div>
 
-          <div className="skills-box frameworks order-1">
-            <div className="border h-10 w-full flex flex-col justify-center p-2 font-bold text-xl text-white">
+          <div className="skills-box-css frameworks order-1">
+            <div className="border p-2">
               <h1>Other</h1>
             </div>
-            <div className="border w-full text-white p-2">
+            <div className="apply-css-to-skills-inside-box">
               <p>- HTML</p>
               <p>- CSS</p>
             </div>
