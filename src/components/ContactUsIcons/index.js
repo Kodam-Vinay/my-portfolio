@@ -4,10 +4,7 @@ import EmailIcon from "../svgs/EmailIcon";
 
 const ContactUsIcons = () => {
   const onClickMail = () => {
-    var mail = "mailto:vinay.kodam112@gmail.com";
-    var a = document.createElement("a");
-    a.href = mail;
-    a.click();
+    window.location = "mailto:vinay.kodam112@gmail.com";
   };
   return (
     <>
