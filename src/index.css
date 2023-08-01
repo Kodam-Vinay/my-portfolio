@@ -1,18 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Fira+Code&family=Piazzolla:wght@900&family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Fira+Code&family=Piazzolla:wght@900&family=Poppins:wght@300&display=swap");
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .skills-box {
+    @apply md:mx-2 my-4 min-w-[200px];
+  }
+}

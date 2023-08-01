@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import StraightLine from "./components/svgs/StraightLine";
 import ContactUsIcons from "./components/ContactUsIcons";
 import QuoteContainer from "./components/QuoteContainer";
+import Skills from "./components/Skills";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       {/* <ShowNavigationMenu /> */}
       <Home />
       <QuoteContainer />
+      <Skills />
     </div>
   );
 }

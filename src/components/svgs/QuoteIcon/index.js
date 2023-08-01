@@ -6,7 +6,6 @@ const QuoteIcon = (props) => (
     height={15}
     viewBox="0 0 26 21"
     fill="none"
-    className="relative top-2 left-2 xl:left-20"
     {...props}
   >
     <path

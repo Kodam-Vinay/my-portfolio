@@ -4,7 +4,7 @@ const QuoteContainer = () => {
   return (
     <div className="font-fira flex flex-col md:flex-row md:justify-between w-full">
       <div className="flex flex-col md:justify-self-center w-[90%] md:w-[50%] relative m-auto">
-        <QuoteIcon />
+        <QuoteIcon className="relative top-2 left-2 xl:left-20" />
         <div className="border m-auto flex flex-col items-center justify-center p-4 text-white font-[500]">
           Of course, bad code can be cleaned up. But it’s very expensive.
         </div>

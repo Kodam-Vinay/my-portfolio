@@ -17,8 +17,8 @@ const Home = () => {
     };
   }, []);
   return (
-    <div className="font-fira p-5 flex flex-col items-center md:items-start md:flex-row justify-around md:px-10">
-      <div className="md:w-[500px] space-y-5">
+    <div className="font-fira p-3 flex flex-col items-center md:items-start md:flex-row md:justify-around md:px-20">
+      <div className="md:w-[500px] space-y-5 mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-white mt-10">
           Vinay is a{" "}
           <span className="text-blue-500 add-transition">
@@ -40,22 +40,22 @@ const Home = () => {
           Contact Me!!
         </button>
       </div>
-      <div className="mt-4 static">
-        <div className="flex left-11 relative">
-          <div className="relative top-14 md:top-32">
+      <div className="mt-4 static m-auto">
+        <div className="flex">
+          <div className="relative top-12 md:top-[85px] md:left-20">
             <DesignBackgroundImage1 />
           </div>
           <img
             src="https://res.cloudinary.com/dwgpba5n2/image/upload/v1690881986/portfolio/1660810700344-01_jd0dxs_z2xcdd_new_ifhryb.png"
             alt="bgImage"
-            className="relative right-24 h-80 md:h-96"
+            className="relative mx-auto right-24 md:right-10 h-80 md:h-96"
             title="profile-image"
           />
-          <div className="relative right-48 top-1/2 md:top-[150px]">
+          <div className="relative right-44 top-36 md:right-32 md:top-[180px]">
             <DesignBackgroundImage2 />
           </div>
         </div>
-        <div className="relative border p-2 shadow-sm">
+        <div className="relative border p-2 shadow-sm mx-auto">
           <p className="text-xl text-[#ABB2BF]">
             🟦 Currently Working On{" "}
             <span className="text-white font-bold">Portfolio</span>
