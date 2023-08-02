@@ -14,7 +14,7 @@ const EachProject = (props) => {
     websiteUrl,
   } = projectInfo;
   return (
-    <li className="border xs:min-w-[200px] xs:max-w-[250px] md:min-w-[260px] md:max-w-[300px] text-white font-fira p-1">
+    <li className="border w-full xs:min-w-[240px] xs:max-w-[250px] md:min-w-[260px] md:max-w-[300px] text-white font-fira p-1">
       <img
         src={CLOUDINARY_IMG_URL + cloudinaryImageId}
         alt={name}
