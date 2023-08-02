@@ -37,7 +37,11 @@ const Home = () => {
         <p className="text-xl md:text-2xl text-[#ABB2BF]">
           He crafts responsive websites where technologies meet creativity
         </p>
-        <ReusableButton name="Contact Me!!" />
+        <ReusableButton
+          type="button"
+          name="Contact Me!!"
+          className="hidden md:block"
+        />
       </div>
       <div className="mt-4 static m-auto">
         <div className="flex">
