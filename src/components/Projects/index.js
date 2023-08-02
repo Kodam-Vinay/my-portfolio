@@ -14,7 +14,6 @@ const Projects = () => {
         "https://portfoli-projects-api-production.up.railway.app/projects"
       );
       const jsonData = await data.json();
-      console.log(jsonData);
       const objectData = jsonData.map((eachItem) => ({
         id: eachItem._id,
         cloudinaryImageId: eachItem.cloudinary_image_id,
@@ -32,7 +31,8 @@ const Projects = () => {
   return (
     <div className="font-fira p-1 xs:p-4 mt-4 sm:px-14 md:px-[80px] lg:px-[160px]">
       <HeadingReusableCode name="Projects" />
-      <ul className="p-0 flex flex-col justify-center items-center md:flex-row flex-wrap mt-4 md:space-x-10 space-x-0 space-y-3 md:space-y-0">
+      <ul className="p-0 flex flex-col items-center sm:flex-row flex-wrap mt-4 sm:space-x-4 md:space-x-10 space-x-0 space-y-3 md:space-y-0">
+        <li></li>
         {projectsData.map((eachItem) => (
           <EachProject projectInfo={eachItem} key={eachItem.id} />
         ))}
