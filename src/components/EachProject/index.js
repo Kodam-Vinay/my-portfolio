@@ -1,6 +1,7 @@
 import { CLOUDINARY_IMG_URL } from "../../config";
 import GithubIcon from "../svgs/GithubIcon";
 import WebsiteLogo from "../svgs/WebsiteLogo";
+import "./style.css";
 
 const EachProject = (props) => {
   const { projectInfo } = props;
@@ -21,11 +22,11 @@ const EachProject = (props) => {
         className="h-40 w-full"
       />
       <hr className="w-full my-2" />
-      <p className="px-1 py-1 font-bold">{name}</p>
+      <p className="px-1 py-1 font-bold h-8">{name}</p>
       <hr className="w-full my-2" />
-      <p className="px-1 py-1">{description}</p>
+      <p className="px-1 py-1 h-24">{description}</p>
       <hr className="w-full my-2" />
-      <p>
+      <p className="px-1 py-1 h-20">
         <span className="font-bold text-blue-500">Technologies: </span>
         {technolgies.join(", ")}
       </p>
