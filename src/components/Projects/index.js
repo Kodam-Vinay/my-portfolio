@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import EachProject from "../EachProject";
+import HeadingReusableCode from "../../utils/HeadingReusableCode";
 
 const Projects = () => {
   const [projectsData, setProjectsData] = useState([]);
@@ -13,10 +15,29 @@ const Projects = () => {
       );
       const jsonData = await data.json();
       console.log(jsonData);
+      const objectData = jsonData.map((eachItem) => ({
+        id: eachItem._id,
+        cloudinaryImageId: eachItem.cloudinary_image_id,
+        description: eachItem.description,
+        name: eachItem.name,
+        githubUrl: eachItem.github_url,
+        technolgies: eachItem.technolgies,
+        websiteUrl: eachItem.website_url,
+      }));
+      setProjectsData(objectData);
     } catch (error) {
       throw new Error(error);
     }
   };
-  return <div></div>;
+  return (
+    <div className="font-fira p-1 xs:p-4 mt-4 sm:px-14 md:px-[80px] lg:px-[160px]">
+      <HeadingReusableCode name="Projects" />
+      <ul className="p-0 flex flex-col justify-center items-center md:flex-row flex-wrap mt-4 md:space-x-10 space-x-0 space-y-3 md:space-y-0">
+        {projectsData.map((eachItem) => (
+          <EachProject projectInfo={eachItem} key={eachItem.id} />
+        ))}
+      </ul>
+    </div>
+  );
 };
 export default Projects;

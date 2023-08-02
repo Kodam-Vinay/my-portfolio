@@ -23,10 +23,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <InstagramIcon
-            className="cursor-pointer"
-            onhover="hover:fill-blue-500"
-          />
+          <InstagramIcon className="cursor-pointer" />
         </a>
       </div>
     </div>
