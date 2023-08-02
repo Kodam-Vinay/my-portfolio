@@ -9,7 +9,7 @@ const Projects = () => {
   const getData = async () => {
     try {
       const data = await fetch(
-        "https://api-portfolio-projects.cyclic.cloud/projects"
+        "https://portfoli-projects-api-production.up.railway.app/projects"
       );
       const jsonData = await data.json();
       console.log(jsonData);
