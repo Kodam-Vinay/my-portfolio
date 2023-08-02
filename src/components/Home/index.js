@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import DesignBackgroundImage1 from "../svgs/DesignBackgroundImage1";
 import DesignBackgroundImage2 from "../svgs/DesignBackgroundImage2";
 import "./style.css";
+import ReusableButton from "../../utils/ReusableButton";
 
 const noramlRoles = ["Front End Devloper", "Backend Developer"];
 const stackRoles = ["Full Stack Developer", "Mern Stack Deveoper"];
@@ -36,9 +37,7 @@ const Home = () => {
         <p className="text-xl md:text-2xl text-[#ABB2BF]">
           He crafts responsive websites where technologies meet creativity
         </p>
-        <button className="border text-blue-500 p-1 hidden md:block">
-          Contact Me!!
-        </button>
+        <ReusableButton name="Contact Me!!" />
       </div>
       <div className="mt-4 static m-auto">
         <div className="flex">
@@ -46,7 +45,7 @@ const Home = () => {
             <DesignBackgroundImage1 />
           </div>
           <img
-            src="https://res.cloudinary.com/dwgpba5n2/image/upload/v1690881986/portfolio/1660810700344-01_jd0dxs_z2xcdd_new_ifhryb.png"
+            src="https://res.cloudinary.com/dwgpba5n2/image/upload/v1690912438/portfolio/1660810700344-01_jd0dxs_z2xcdd_new_lo4ou7.webp"
             alt="bgImage"
             className="relative h-48 xs:h-52 sm:h-60 md:h-80 lg:h-96 mx-auto right-[70px] xs:right-10 md:right-[72px] lg:right-24 xl:right-10"
             title="profile-image"

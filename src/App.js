@@ -6,6 +6,7 @@ import ContactUsIcons from "./components/ContactUsIcons";
 import QuoteContainer from "./components/QuoteContainer";
 import Skills from "./components/Skills";
 import About from "./components/About";
+import Projects from "./components/Projects";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       {/* <ShowNavigationMenu /> */}
       <Home />
       <QuoteContainer />
+      <Projects />
       <Skills />
       <About />
     </div>
