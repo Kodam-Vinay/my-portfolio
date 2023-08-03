@@ -3,7 +3,7 @@ import LinkedInIcon from "../svgs/LinkedInIcon";
 import EmailIcon from "../svgs/EmailIcon";
 
 const ContactUsIcons = (props) => {
-  const { className, nohover, applyStroke } = props;
+  const { className, nohover, addBgColor } = props;
   const onClickMail = () => {
     window.location = "mailto:vinay.kodam112@gmail.com";
   };
@@ -15,17 +15,17 @@ const ContactUsIcons = (props) => {
         rel="noreferrer"
       >
         <LinkedInIcon
-          className={`hover:h-10 hover:w-10 cursor-pointer ${applyStroke} ${nohover}`}
+          className={`hover:h-10 hover:w-10 cursor-pointer ${nohover} ${addBgColor}`}
         />
       </a>
       <a href="https://github.com/Kodam-Vinay" target="_blank" rel="noreferrer">
         <GithubIcon
-          className={`hover:h-10 hover:w-10 cursor-pointer ${applyStroke} ${nohover}`}
+          className={`hover:h-10 hover:w-10 cursor-pointer ${nohover} ${addBgColor}`}
         />
       </a>
       <button type="button" onClick={onClickMail}>
         <EmailIcon
-          className={`hover:h-10 hover:w-10 cursor-pointer ${applyStroke} ${nohover}`}
+          className={`hover:h-10 hover:w-10 cursor-pointer ${nohover} ${addBgColor}`}
         />
       </button>
     </div>

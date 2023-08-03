@@ -1,30 +1,109 @@
 import { useState } from "react";
+import { BeatLoader } from "react-spinners";
 import HeadingReusableCode from "../../utils/HeadingReusableCode";
 import ReusableButton from "../../utils/ReusableButton";
 import ReusableInput from "../../utils/ReusableInput";
 import DesignBackgroundImage2 from "../svgs/DesignBackgroundImage2";
 import ContactUsImage from "../svgs/ContactUsImage";
 
+const constApiStatus = {
+  initial: "INITIAL",
+  inProgress: "IN_PROGRESS",
+  success: "SUCCESS",
+  failure: "FAILURE",
+};
+
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
-  const onSubmitForm = (event) => {
+  const [apiStatus, setApiStatus] = useState({
+    status: constApiStatus.initial,
+    errorMsg: null,
+  });
+
+  const onSubmitForm = async (event) => {
     event.preventDefault();
-    const data = {
-      name,
-      email,
-      title,
-      message,
+    setApiStatus((prev) => ({
+      ...prev,
+      status: constApiStatus.inProgress,
+    }));
+    const contactData = {
+      name: name,
+      email: email,
+      title: title,
+      message: message,
     };
-    alert(JSON.stringify(data));
-    console.log("hello");
-    setName("");
-    setEmail("");
-    setTitle("");
-    setMessage("");
+
+    try {
+      const apiUrl =
+        "https://portfoli-projects-api-production.up.railway.app/contact-details";
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactData),
+      };
+      const response = await fetch(apiUrl, options);
+      if (response.ok) {
+        setApiStatus((prev) => ({
+          ...prev,
+          status: constApiStatus.success,
+        }));
+        setName("");
+        setEmail("");
+        setTitle("");
+        setMessage("");
+      } else {
+        setApiStatus((prev) => ({
+          ...prev,
+          errorMsg: "Please Enter Valid Details",
+          status: constApiStatus.failure,
+        }));
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+  const renderButton = () => {
+    const { status } = apiStatus;
+    switch (status) {
+      case constApiStatus.initial:
+        return (
+          <ReusableButton type="submit" name="Send 📩" className="px-3 mt-2" />
+        );
+      case constApiStatus.success:
+        return (
+          <ReusableButton
+            type="submit"
+            name="Success ✅"
+            className="px-3 mt-2 bg-green-300"
+          />
+        );
+      case constApiStatus.failure:
+        return (
+          <ReusableButton
+            type="submit"
+            name="Fail ❌"
+            className="px-3 mt-2 bg-red-300"
+          />
+        );
+      case constApiStatus.inProgress:
+        return (
+          <ReusableButton
+            type="submit"
+            className="px-2 flex flex-col items-center justify-center"
+            name={<BeatLoader size={20} color="#4dd4db" />}
+          />
+        );
+      default:
+        break;
+    }
+  };
+
   return (
     <div>
       <div className="h-20 p-10 w-20 hidden md:block relative right-20 top-36">
@@ -60,12 +139,15 @@ const Contact = () => {
               placeholder="Message"
               onChange={(event) => setMessage(event.target.value)}
               value={message}
-              required
-            ></textarea>
-            <ReusableButton type="submit" name="Send" className="px-3 mt-2" />
+            />
+            {renderButton()}
+            <p className="text-red-500">
+              {apiStatus.errorMsg ? apiStatus.errorMsg : null}
+            </p>
           </form>
-          <div className="contact-image">
-            <ContactUsImage />
+
+          <div className="contact-image flex flex-col items-center">
+            <ContactUsImage className="w-full xs:w-[280px]" />
           </div>
         </div>
       </div>

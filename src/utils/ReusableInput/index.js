@@ -7,7 +7,6 @@ const ReusableInput = (props) => {
       onChange={onChange}
       placeholder={placeholder}
       value={value}
-      required
     />
   );
 };
