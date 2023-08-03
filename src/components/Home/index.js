@@ -3,6 +3,7 @@ import DesignBackgroundImage1 from "../svgs/DesignBackgroundImage1";
 import DesignBackgroundImage2 from "../svgs/DesignBackgroundImage2";
 import "./style.css";
 import ReusableButton from "../../utils/ReusableButton";
+import ProfilePic from "../ProfilePic";
 
 const noramlRoles = ["Front End Devloper", "Backend Developer"];
 const stackRoles = ["Full Stack Developer", "Mern Stack Deveoper"];
@@ -43,7 +44,7 @@ const Home = () => {
           className="hidden md:block"
         />
       </div>
-      <div className="mt-4 static m-auto">
+      {/* <div className="mt-4 static m-auto">
         <div className="flex">
           <div className="relative top-10 left-5 xs:top-5 xs:left-12 sm:left-12 sm:top-10 md:top-[70px] md:left-5 lg:left-4 lg:top-24 xl:left-16">
             <DesignBackgroundImage1 />
@@ -64,7 +65,8 @@ const Home = () => {
             <span className="text-white font-bold">Portfolio</span>
           </p>
         </div>
-      </div>
+      </div> */}
+      <ProfilePic />
     </div>
   );
 };
