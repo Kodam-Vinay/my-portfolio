@@ -3,7 +3,7 @@ const ReusableButton = (props) => {
   return (
     <button
       type={props.type}
-      className={`border border-blue-500 text-white text-base px-2 py-1 outline-none hover:text-blue-500 hover:border-white ${className}`}
+      className={`border border-blue-500 text-white text-base px-2 py-1 outline-none hover:text-blue-500 hover:border-white rounded-md ${className}`}
     >
       {props.name}
     </button>

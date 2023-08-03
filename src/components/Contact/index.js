@@ -55,7 +55,7 @@ const Contact = () => {
               value={title}
             />
             <textarea
-              className="bg-transparent border p-2 w-full outline-blue-500 text-white"
+              className="bg-transparent border p-2 w-full outline-blue-500 text-white rounded-md focus:bg-gray-800"
               rows={5}
               placeholder="Message"
               onChange={(event) => setMessage(event.target.value)}
