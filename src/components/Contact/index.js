@@ -60,6 +60,7 @@ const Contact = () => {
               placeholder="Message"
               onChange={(event) => setMessage(event.target.value)}
               value={message}
+              required
             ></textarea>
             <ReusableButton type="submit" name="Send" className="px-3 mt-2" />
           </form>

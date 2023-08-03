@@ -21,9 +21,10 @@ const Skills = () => {
         <ul className="p-0 flex flex-col items-center sm:flex-row flex-wrap md:items-start md:space-x-5">
           <div></div>
           <div className="skills-box-css languages order-2">
-            <div className="border p-2">
+            <div className="p-2">
               <h1>Languages</h1>
             </div>
+            <hr />
             <div className="apply-css-to-skills-inside-box">
               <p>- Javascript</p>
               <p>- Python</p>
@@ -32,9 +33,10 @@ const Skills = () => {
           </div>
 
           <div className="skills-box-css database order-1">
-            <div className="border p-2">
+            <div className="p-2">
               <h1>Databases</h1>
             </div>
+            <hr />
             <div className="apply-css-to-skills-inside-box">
               <p>- SQLite</p>
               <p>- MongoDb</p>
@@ -42,7 +44,8 @@ const Skills = () => {
           </div>
 
           <div className="skills-box-css tools order-3">
-            <div className="border p-2">Tools</div>
+            <div className="p-2">Tools</div>
+            <hr />
             <div className="apply-css-to-skills-inside-box">
               <p>- VsCode</p>
               <p>- Ubuntu</p>
@@ -54,7 +57,8 @@ const Skills = () => {
           </div>
 
           <div className="skills-box-css frameworks order-2">
-            <div className="border p-2">Frameworks & Libraries</div>
+            <div className="p-2">Frameworks & Libraries</div>
+            <hr />
             <div className="apply-css-to-skills-inside-box">
               <p>- React.js</p>
               <p>- Node.js</p>
@@ -63,9 +67,10 @@ const Skills = () => {
           </div>
 
           <div className="skills-box-css frameworks order-1">
-            <div className="border p-2">
+            <div className="p-2">
               <h1>Other</h1>
             </div>
+            <hr />
             <div className="apply-css-to-skills-inside-box">
               <p>- HTML</p>
               <p>- CSS</p>

@@ -13,7 +13,7 @@ const About = () => {
           <div className="flex flex-col justify-center items-center order-2">
             <AboutImage className="h-52 sm:h-64 md:h-80" />
           </div>
-          <div className="my-data text-white mt-3 md:w-80 text-sm xs:text-[16px] sm:text-lg md:text-xl lg:text-2xl">
+          <div className="my-data text-white mt-3 md:w-80 lg:w-[400px] xl:w-1/2 text-sm xs:text-[16px] sm:text-lg md:text-xl lg:text-2xl">
             <p>
               Iam Vinay Kumar Kodam, Iam a{" "}
               <span className="text-blue-300 font-[600]">

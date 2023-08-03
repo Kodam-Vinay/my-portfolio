@@ -13,9 +13,9 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="bg-[#282C33] h-screen overflow-y-auto flex flex-col overflow-x-hidden">
-      <div className="hidden md:flex flex-col w-10 items-center absolute space-y-2 ml-4">
+      <div className="hidden md:flex flex-col w-14 items-center absolute space-y-2 ml-4">
         <StraightLine />
-        <ContactUsIcons />
+        <ContactUsIcons applyStroke="hover:stroke-blue-500" />
       </div>
       <Header />
       {/* <ShowNavigationMenu /> */}

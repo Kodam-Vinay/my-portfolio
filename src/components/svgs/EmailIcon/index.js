@@ -6,6 +6,7 @@ const EmailIcon = (props) => (
     viewBox="0 0 32 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    //stroke is inside color
     {...props}
   >
     <path

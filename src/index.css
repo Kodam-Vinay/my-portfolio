@@ -19,10 +19,10 @@ code {
 
 @layer components {
   .skills-box-css {
-    @apply md:mx-2 my-4 min-w-[200px] w-full flex flex-col justify-center p-2 font-bold text-xl text-white sm:w-fit;
+    @apply md:mx-2 my-4 min-w-[200px] w-full flex flex-col justify-center p-2 font-bold text-xl text-white sm:w-fit border hover:bg-gray-800;
   }
 
   .apply-css-to-skills-inside-box {
-    @apply border w-full text-white p-2 space-y-2;
+    @apply w-full text-white p-2 space-y-2;
   }
 }

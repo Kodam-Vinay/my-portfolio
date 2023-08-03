@@ -3,7 +3,7 @@ const ReusableInput = (props) => {
   return (
     <input
       type={type}
-      className={`bg-transparent border p-2 w-full outline-blue-500 text-white ${className}`}
+      className={`bg-transparent border p-2 w-full outline-blue-500 text-white ${className} focus:bg-gray-800`}
       onChange={onChange}
       placeholder={placeholder}
       value={value}
