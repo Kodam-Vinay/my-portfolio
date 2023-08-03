@@ -26,7 +26,7 @@ const EachProject = (props) => {
       <hr className="w-full my-2" />
       <p className="px-1 py-1 h-24">{description}</p>
       <hr className="w-full my-2" />
-      <p className="px-1 py-1 h-20">
+      <p className="px-1 py-1 h-24">
         <span className="font-bold text-blue-500">Technologies: </span>
         {technolgies.join(", ")}
       </p>

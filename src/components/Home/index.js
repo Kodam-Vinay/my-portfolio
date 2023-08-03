@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import DesignBackgroundImage1 from "../svgs/DesignBackgroundImage1";
-import DesignBackgroundImage2 from "../svgs/DesignBackgroundImage2";
 import "./style.css";
 import ReusableButton from "../../utils/ReusableButton";
 import ProfilePic from "../ProfilePic";
