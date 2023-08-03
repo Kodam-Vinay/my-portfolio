@@ -7,7 +7,10 @@ const Shimmer = () => {
       {Array(4)
         .fill("")
         .map((each) => (
-          <div key={uuidV4()} className="h-96 w-[240px] border p-2 mt-4">
+          <div
+            key={uuidV4()}
+            className="h-96 w-[240px] border p-2 mt-4 rounded-md"
+          >
             <div className="bg-gray-400 h-[120px] w-full shadow-gray-600 shadow-md"></div>
             <hr className="w-full my-2" />
 
@@ -21,8 +24,8 @@ const Shimmer = () => {
             <hr className="w-full my-2" />
 
             <div className="w-full h-10 flex items-center justify-around">
-              <div className="bg-gray-400 h-10 w-2/5 shadow-gray-600 shadow-md"></div>
-              <div className="bg-gray-400 h-10 w-2/5 shadow-gray-600 shadow-md"></div>
+              <div className="bg-gray-400 h-10 w-2/5 shadow-gray-600 shadow-md rounded-md"></div>
+              <div className="bg-gray-400 h-10 w-2/5 shadow-gray-600 shadow-md rounded-md"></div>
             </div>
           </div>
         ))}
