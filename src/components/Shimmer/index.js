@@ -2,9 +2,9 @@ import { v4 as uuidV4 } from "uuid";
 
 const Shimmer = () => {
   return (
-    <div className="flex flex-col xs:flex-row space-x-5 w-full flex-wrap">
+    <div className="flex flex-col xs:flex-row xs:space-x-6 w-full flex-wrap">
       <div></div>
-      {Array(4)
+      {Array(6)
         .fill("")
         .map((each) => (
           <div
