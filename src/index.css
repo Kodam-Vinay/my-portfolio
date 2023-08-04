@@ -33,4 +33,8 @@ code {
   .add_zoom:hover {
     transform: scale(1.1);
   }
+
+  .add_table_border {
+    @apply border-[2px] border-black;
+  }
 }
