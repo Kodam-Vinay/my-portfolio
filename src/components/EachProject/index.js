@@ -33,19 +33,19 @@ const EachProject = (props) => {
       <hr className="w-full my-2" />
       <div className="flex items-center justify-around w-full p-1">
         <a
-          className="border hover:border-blue-500 border-white w-2/5 h-10 px-1 py-1 rounded-md"
+          className="border hover:border-blue-500 border-white w-2/5 h-10 px-1 py-1 rounded-md flex items-center"
           href="/#"
         >
           <button
             type="button"
             className="w-full flex items-center justify-around text-blue-500 hover:text-white"
           >
-            <p>Github</p>
+            <p className="text-sm font-bold">Github</p>
             <GithubIcon />
           </button>
         </a>
         <a
-          className="border hover:border-blue-500 border-white w-2/5 h-10 px-1 py-1 rounded-md"
+          className="border hover:border-blue-500 border-white w-2/5 h-10 px-1 py-1 rounded-md flex items-center"
           href={websiteUrl}
           target="_blank"
           rel="noreferrer"
@@ -54,7 +54,7 @@ const EachProject = (props) => {
             type="button"
             className="w-full flex items-center justify-around text-blue-500 hover:text-white"
           >
-            <p>Website</p>
+            <p className="text-sm font-bold">Live</p>
             <WebsiteLogo />
           </button>
         </a>

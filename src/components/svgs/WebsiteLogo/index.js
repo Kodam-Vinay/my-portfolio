@@ -2,7 +2,7 @@ import * as React from "react";
 const WebsiteLogo = (props) => (
   <svg
     fill="#ABB2BF"
-    width="20px"
+    width="18px"
     height="20px"
     viewBox="0 0 512 512"
     id="_x30_1"
