@@ -25,4 +25,11 @@ code {
   .apply-css-to-skills-inside-box {
     @apply w-full text-white p-2 space-y-2;
   }
+
+  .add_zoom {
+    transition: 0.2s;
+  }
+  .add_zoom:hover {
+    transform: scale(1.1);
+  }
 }

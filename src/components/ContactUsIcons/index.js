@@ -15,17 +15,17 @@ const ContactUsIcons = (props) => {
         rel="noreferrer"
       >
         <LinkedInIcon
-          className={`hover:h-10 hover:w-10 cursor-pointer ${nohover} ${addBgColor}`}
+          className={`add_zoom cursor-pointer ${nohover} ${addBgColor}`}
         />
       </a>
       <a href="https://github.com/Kodam-Vinay" target="_blank" rel="noreferrer">
         <GithubIcon
-          className={`hover:h-10 hover:w-10 cursor-pointer ${nohover} ${addBgColor}`}
+          className={`add_zoom cursor-pointer ${nohover} ${addBgColor}`}
         />
       </a>
       <button type="button" onClick={onClickMail}>
         <EmailIcon
-          className={`hover:h-10 hover:w-10 cursor-pointer ${nohover} ${addBgColor}`}
+          className={`add_zoom cursor-pointer ${nohover} ${addBgColor}`}
         />
       </button>
     </div>

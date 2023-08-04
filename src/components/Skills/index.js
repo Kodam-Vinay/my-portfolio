@@ -20,7 +20,7 @@ const Skills = () => {
         </div>
         <ul className="p-0 flex flex-col items-center sm:flex-row flex-wrap md:items-start md:space-x-5">
           <div></div>
-          <div className="skills-box-css languages order-2">
+          <div className="skills-box-css add_zoom languages order-2">
             <div className="p-2">
               <h1>Languages</h1>
             </div>
@@ -32,7 +32,7 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="skills-box-css database order-1">
+          <div className="skills-box-css add_zoom database order-1">
             <div className="p-2">
               <h1>Databases</h1>
             </div>
@@ -43,7 +43,7 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="skills-box-css tools order-3">
+          <div className="skills-box-css add_zoom tools order-3">
             <div className="p-2">Tools</div>
             <hr />
             <div className="apply-css-to-skills-inside-box">
@@ -56,7 +56,7 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="skills-box-css frameworks order-2">
+          <div className="skills-box-css add_zoom frameworks order-2">
             <div className="p-2">Frameworks & Libraries</div>
             <hr />
             <div className="apply-css-to-skills-inside-box">
@@ -66,7 +66,7 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="skills-box-css frameworks order-1">
+          <div className="skills-box-css add_zoom frameworks order-1">
             <div className="p-2">
               <h1>Other</h1>
             </div>
