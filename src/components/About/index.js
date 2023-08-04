@@ -5,7 +5,7 @@ import DesignBackgroundImage2 from "../svgs/DesignBackgroundImage2";
 
 const About = () => {
   return (
-    <div className="relative flex justify-between">
+    <div className="relative flex justify-between" id="about">
       <div className="h-20 p-10 w-20 border hidden md:block relative right-10 top-52"></div>
       <div className="font-fira p-1 xs:p-4 mt-4 sm:px-14 flex flex-col md:px-[0px] lg:px-[72px] xl:px-[65px] md:w-full">
         <HeadingReusableCode name="About" />

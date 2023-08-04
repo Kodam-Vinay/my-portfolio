@@ -105,7 +105,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div id="contact">
       <div className="h-20 p-10 w-20 hidden md:block relative right-20 top-36">
         <DesignBackgroundImage2 />
       </div>

@@ -1,6 +1,7 @@
 import GithubIcon from "../svgs/GithubIcon";
 import LinkedInIcon from "../svgs/LinkedInIcon";
 import EmailIcon from "../svgs/EmailIcon";
+import { Link } from "react-router-dom";
 
 const ContactUsIcons = (props) => {
   const { className, nohover, addBgColor } = props;
@@ -8,21 +9,24 @@ const ContactUsIcons = (props) => {
     window.location = "mailto:vinay.kodam112@gmail.com";
   };
   return (
-    <div className={className}>
-      <a
-        href="https://www.linkedin.com/in/vinay-kumar-kodam-4054bb21b/"
+    <div className={`${className} z-10`}>
+      <Link
+        to="https://www.linkedin.com/in/vinay-kumar-kodam-4054bb21b/"
         target="_blank"
-        rel="noreferrer"
       >
         <LinkedInIcon
           className={`add_zoom cursor-pointer ${nohover} ${addBgColor}`}
         />
-      </a>
-      <a href="https://github.com/Kodam-Vinay" target="_blank" rel="noreferrer">
+      </Link>
+      <Link
+        href="https://github.com/Kodam-Vinay"
+        target="_blank"
+        rel="noreferrer"
+      >
         <GithubIcon
           className={`add_zoom cursor-pointer ${nohover} ${addBgColor}`}
         />
-      </a>
+      </Link>
       <button type="button" onClick={onClickMail}>
         <EmailIcon
           className={`add_zoom cursor-pointer ${nohover} ${addBgColor}`}

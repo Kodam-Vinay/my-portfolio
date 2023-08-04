@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.add-animation-to-main-app {
+  animation: compoent-spin 1 2s normal;
+}
+
+@keyframes compoent-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

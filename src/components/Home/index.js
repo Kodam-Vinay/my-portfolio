@@ -17,7 +17,10 @@ const Home = () => {
     };
   }, []);
   return (
-    <div className="font-fira p-3 flex flex-col items-center md:items-start md:flex-row md:justify-around md:px-20 lg:px-40 xl:px-20">
+    <div
+      className="font-fira p-3 flex flex-col items-center md:items-start md:flex-row md:justify-around md:px-20 lg:px-40 xl:px-20"
+      id="home"
+    >
       <div className="md:w-[500px] space-y-5 mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-white mt-10">
           Vinay is a{" "}
