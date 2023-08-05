@@ -18,7 +18,7 @@ const Header = (props) => {
         onClick={() => setHamburgerClicked((prev) => !prev)}
       >
         {!hamburgerClicked && (
-          <HamburgerIcon className="add_zoom cursor-pointer" />
+          <HamburgerIcon className="add_zoom cursor-pointer hamburger-icon" />
         )}
       </button>
       <div className="hidden md:block">

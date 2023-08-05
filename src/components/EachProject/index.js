@@ -34,26 +34,26 @@ const EachProject = (props) => {
       <hr className="w-full my-2" />
       <div className="flex items-center justify-around w-full p-1">
         <Link
-          className="border hover:border-blue-500 border-white w-2/5 h-10 px-1 py-1 rounded-md flex items-center"
+          className="border hover:border-blue-500 border-white w-2/5 h-10 rounded-md flex items-center"
           to={githubUrl}
           target="_blank"
         >
           <button
             type="button"
-            className="w-full flex items-center justify-around text-blue-500 hover:text-white add_zoom"
+            className="w-full h-full flex items-center justify-around px-1 py-1 text-blue-500 hover:text-white add_zoom"
           >
             <p className="text-sm font-bold">Github</p>
             <GithubIcon />
           </button>
         </Link>
         <Link
-          className="border hover:border-blue-500 border-white w-2/5 h-10 px-1 py-1 rounded-md flex items-center"
+          className="border hover:border-blue-500 border-white w-2/5 h-10 rounded-md flex items-center"
           to={websiteUrl}
           target="_blank"
         >
           <button
             type="button"
-            className="w-full flex items-center justify-around text-blue-500 hover:text-white add_zoom"
+            className="w-full h-full flex items-center justify-around px-1 py-1 text-blue-500 hover:text-white add_zoom "
           >
             <p className="text-sm font-bold">Live</p>
             <WebsiteLogo />

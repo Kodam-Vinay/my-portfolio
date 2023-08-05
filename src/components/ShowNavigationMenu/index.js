@@ -14,7 +14,7 @@ const ShowNavigationMenu = (props) => {
           <CloseIcon className="add_zoom cursor-pointer ml-auto" />
         )}
       </button>
-      <NavigationLinks className="ml-auto" />
+      <NavigationLinks className="add_zoom_small_screen" />
     </div>
   );
 };

@@ -1,0 +1,7 @@
+.add_zoom_small_screen {
+  transition: 0.2s;
+}
+.add_zoom_small_screen:hover {
+  transform: scaleY(0.9);
+  transform: scaleZ(0.9);
+}
