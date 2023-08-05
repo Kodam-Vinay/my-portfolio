@@ -1,20 +1,23 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useState } from "react";
 import "./App.css";
-import Home from "./components/Home";
+import Home from "./routes/Home";
+import About from "./routes/About";
+import Contact from "./routes/Contact";
+import Projects from "./routes/Projects";
+import ErrorPage from "./routes/ErrorPage";
+import AdminTable from "./routes/AdminTable";
+
 import Header from "./components/Header";
 import StraightLine from "./components/svgs/StraightLine";
 import ContactUsIcons from "./components/ContactUsIcons";
 import QuoteContainer from "./components/QuoteContainer";
-import ErrorPage from "./components/ErrorPage";
+
 import ShowNavigationMenu from "./components/ShowNavigationMenu";
 
 import Skills from "./components/Skills";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+
 import Footer from "./components/Footer";
-import AdminTable from "./components/AdminTable";
-import { useState } from "react";
 
 const RenderUi = () => {
   const [hamburgerClicked, setHamburgerClicked] = useState(false);

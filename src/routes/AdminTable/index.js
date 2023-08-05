@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import EachContact from "../EachContact";
+import EachContact from "../../components/EachContact";
 import { HashLoader } from "react-spinners";
 
 const AdminTable = () => {
