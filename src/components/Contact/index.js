@@ -28,43 +28,52 @@ const Contact = () => {
     setApiStatus((prev) => ({
       ...prev,
       status: constApiStatus.inProgress,
+      errorMsg: null,
     }));
-    const contactData = {
-      name: name,
-      email: email,
-      title: title,
-      message: message,
-    };
-
-    try {
-      const apiUrl =
-        "https://portfoli-projects-api-production.up.railway.app/contact-details";
-      const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(contactData),
+    if (!name || !email || !title || !message) {
+      setApiStatus((prev) => ({
+        ...prev,
+        status: constApiStatus.failure,
+        errorMsg: "Please Enter The values",
+      }));
+    } else {
+      const contactData = {
+        name: name,
+        email: email,
+        title: title,
+        message: message,
       };
-      const response = await fetch(apiUrl, options);
-      if (response.ok) {
-        setApiStatus((prev) => ({
-          ...prev,
-          status: constApiStatus.success,
-        }));
-        setName("");
-        setEmail("");
-        setTitle("");
-        setMessage("");
-      } else {
-        setApiStatus((prev) => ({
-          ...prev,
-          errorMsg: "Please Enter Valid Details",
-          status: constApiStatus.failure,
-        }));
+
+      try {
+        const apiUrl =
+          "https://portfoli-projects-api-production.up.railway.app/contact-details";
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(contactData),
+        };
+        const response = await fetch(apiUrl, options);
+        if (response.ok) {
+          setApiStatus((prev) => ({
+            ...prev,
+            status: constApiStatus.success,
+          }));
+          setName("");
+          setEmail("");
+          setTitle("");
+          setMessage("");
+        } else {
+          setApiStatus((prev) => ({
+            ...prev,
+            errorMsg: "Please Enter Valid Details",
+            status: constApiStatus.failure,
+          }));
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
     }
   };
 

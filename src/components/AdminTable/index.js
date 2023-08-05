@@ -10,21 +10,29 @@ const AdminTable = () => {
   }, []);
 
   const getData = async () => {
-    const apiUrl =
-      "https://portfoli-projects-api-production.up.railway.app/contact-details";
-    const data = await fetch(apiUrl);
-    const jsonData = await data.json();
-    setUserContactDetails(jsonData);
+    try {
+      const apiUrl =
+        "https://portfoli-projects-api-production.up.railway.app/contact-details";
+      const data = await fetch(apiUrl);
+      const jsonData = await data.json();
+      setUserContactDetails(jsonData);
+    } catch (error) {
+      throw new Error(error);
+    }
   };
 
   const onClickDelete = async (id) => {
-    const apiUrl = `https://portfoli-projects-api-production.up.railway.app/contact-details/${id}`;
-    const options = {
-      method: "DELETE",
-    };
-    const response = await fetch(apiUrl, options);
-    console.log(response);
-    getData();
+    try {
+      const apiUrl = `https://portfoli-projects-api-production.up.railway.app/contact-details/${id}`;
+      const options = {
+        method: "DELETE",
+      };
+      const response = await fetch(apiUrl, options);
+      console.log(response);
+      getData();
+    } catch (error) {
+      throw new Error(error);
+    }
   };
 
   return (

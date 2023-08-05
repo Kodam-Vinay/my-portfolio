@@ -27,7 +27,7 @@ const NavigationLinks = (props) => {
       <li
         className={`text-[#ABB2BF] font-fira hover:text-white cursor-pointer md:add_zoom ${props.className}`}
       >
-        <Link to="#">Home</Link>
+        <Link to="#home">Home</Link>
       </li>
 
       <li
