@@ -59,6 +59,7 @@ const Contact = () => {
           setApiStatus((prev) => ({
             ...prev,
             status: constApiStatus.success,
+            errorMsg: null,
           }));
           setName("");
           setEmail("");
