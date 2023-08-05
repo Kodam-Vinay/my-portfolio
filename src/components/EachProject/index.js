@@ -40,7 +40,7 @@ const EachProject = (props) => {
         >
           <button
             type="button"
-            className="w-full flex items-center justify-around text-blue-500 hover:text-white"
+            className="w-full flex items-center justify-around text-blue-500 hover:text-white add_zoom"
           >
             <p className="text-sm font-bold">Github</p>
             <GithubIcon />
@@ -53,7 +53,7 @@ const EachProject = (props) => {
         >
           <button
             type="button"
-            className="w-full flex items-center justify-around text-blue-500 hover:text-white"
+            className="w-full flex items-center justify-around text-blue-500 hover:text-white add_zoom"
           >
             <p className="text-sm font-bold">Live</p>
             <WebsiteLogo />

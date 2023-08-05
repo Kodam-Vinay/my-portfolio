@@ -24,7 +24,7 @@ const Footer = () => {
           target="_blank"
           className="ml-1"
         >
-          <InstagramIcon className="cursor-pointer p-1 hover:bg-blue-400 hover:rounded-md hover:border" />
+          <InstagramIcon className="cursor-pointer p-1 hover:bg-blue-400 hover:rounded-md hover:border add_zoom" />
         </Link>
       </div>
     </div>

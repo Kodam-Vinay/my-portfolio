@@ -21,21 +21,20 @@ const Home = () => {
       className="font-fira p-3 flex flex-col items-center md:items-start md:flex-row md:justify-around md:px-20 lg:px-40 xl:px-20"
       id="home"
     >
-      <div className="md:w-[500px] space-y-5 mx-auto">
+      <div className="w-full md:w-[500px] space-y-5 mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-white mt-10">
           Vinay is a{" "}
-          <span className="text-blue-500 add-transition">
+          <span className="text-blue-500">
             {randomNum === 0 || randomNum
               ? noramlRoles[randomNum]
-              : "Front End Devloper"}
-          </span>{" "}
-          and{" "}
-          <span className="text-blue-500">
+              : "Front End Devloper"}{" "}
+            and{" "}
             {randomNum === 0 || randomNum
               ? stackRoles[randomNum]
               : "Mern Stack Deveoper"}
           </span>
         </h1>
+
         <p className="text-xl md:text-2xl text-[#ABB2BF]">
           He crafts responsive websites where technologies meet creativity
         </p>
