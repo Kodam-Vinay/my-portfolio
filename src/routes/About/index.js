@@ -3,6 +3,7 @@ import HeadingReusableCode from "../../utils/HeadingReusableCode";
 import ReusableButton from "../../utils/ReusableButton";
 import AboutImage from "../../components/svgs/AboutImage";
 import DesignBackgroundImage2 from "../../components/svgs/DesignBackgroundImage2";
+import { GDRIVE_LINK } from "../../config";
 
 const About = () => {
   return (
@@ -26,10 +27,7 @@ const About = () => {
                 React.js, Node.js, Python, SQLite and MongoDB
               </span>
             </p>
-            <Link
-              to="https://drive.google.com/file/d/1s9ixRkwDELzKRdmottBQGg4Pc9P1W4ZP/view?usp=sharing"
-              target="_blank"
-            >
+            <Link to={GDRIVE_LINK} target="_blank">
               <ReusableButton
                 type="button"
                 name="Read More"

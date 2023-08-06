@@ -5,6 +5,7 @@ import ReusableButton from "../../utils/ReusableButton";
 import ReusableInput from "../../utils/ReusableInput";
 import DesignBackgroundImage2 from "../../components/svgs/DesignBackgroundImage2";
 import ContactUsImage from "../../components/svgs/ContactUsImage";
+import { CONTACT_API_URL } from "../../config";
 
 const constApiStatus = {
   initial: "INITIAL",
@@ -45,8 +46,7 @@ const Contact = () => {
       };
 
       try {
-        const apiUrl =
-          "https://portfoli-projects-api-production.up.railway.app/contact-details";
+        const apiUrl = CONTACT_API_URL;
         const options = {
           method: "POST",
           headers: {

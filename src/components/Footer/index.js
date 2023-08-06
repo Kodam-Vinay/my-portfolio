@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import ContactUsIcons from "../ContactUsIcons";
 import HomeLogo from "../svgs/Homelogo";
 import InstagramIcon from "../svgs/InstagramIcon";
+import { INSTA_URL } from "../../config";
 
 const Footer = () => {
   return (
@@ -19,11 +20,7 @@ const Footer = () => {
           nohover="hover:text-base hover:h-base hover:h-8 hover:w-8"
           addBgColor="hover:bg-blue-400 hover:rounded-md hover:border"
         />
-        <Link
-          to="https://www.instagram.com/_vinay_vinni_7/?igshid=MzNlNGNkZWQ4Mg%3D%3D"
-          target="_blank"
-          className="ml-1"
-        >
+        <Link to={INSTA_URL} target="_blank" className="ml-1">
           <InstagramIcon className="cursor-pointer p-1 hover:bg-blue-400 hover:rounded-md hover:border add_zoom" />
         </Link>
       </div>

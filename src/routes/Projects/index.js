@@ -3,6 +3,7 @@ import { useState } from "react";
 import EachProject from "../../components/EachProject";
 import HeadingReusableCode from "../../utils/HeadingReusableCode";
 import Shimmer from "../../components/Shimmer";
+import { PROJECTS_API_URL } from "../../config";
 
 const Projects = () => {
   const [projectsData, setProjectsData] = useState([]);
@@ -11,9 +12,7 @@ const Projects = () => {
   }, []);
   const getData = async () => {
     try {
-      const data = await fetch(
-        "https://portfoli-projects-api-production.up.railway.app/projects"
-      );
+      const data = await fetch(PROJECTS_API_URL);
       const jsonData = await data.json();
       const objectData = jsonData.map((eachItem) => ({
         id: eachItem._id,
@@ -24,6 +23,7 @@ const Projects = () => {
         technolgies: eachItem.technolgies,
         websiteUrl: eachItem.website_url,
       }));
+
       setProjectsData(objectData);
     } catch (error) {
       throw new Error(error);

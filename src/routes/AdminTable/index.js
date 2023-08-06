@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import EachContact from "../../components/EachContact";
 import { HashLoader } from "react-spinners";
+import { CONTACT_API_URL } from "../../config";
 
 const AdminTable = () => {
   const [userContactDetails, setUserContactDetails] = useState([]);
@@ -11,8 +12,7 @@ const AdminTable = () => {
 
   const getData = async () => {
     try {
-      const apiUrl =
-        "https://portfoli-projects-api-production.up.railway.app/contact-details";
+      const apiUrl = CONTACT_API_URL;
       const data = await fetch(apiUrl);
       const jsonData = await data.json();
       setUserContactDetails(jsonData);
@@ -23,7 +23,7 @@ const AdminTable = () => {
 
   const onClickDelete = async (id) => {
     try {
-      const apiUrl = `https://portfoli-projects-api-production.up.railway.app/contact-details/${id}`;
+      const apiUrl = CONTACT_API_URL;
       const options = {
         method: "DELETE",
       };
