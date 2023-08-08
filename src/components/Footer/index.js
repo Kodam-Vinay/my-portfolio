@@ -6,7 +6,7 @@ import { INSTA_URL } from "../../config";
 
 const Footer = () => {
   return (
-    <div className="font-fira p-1 xs:p-4 mt-2 sm:px-14 md:px-[80px] lg:px-[150px] text-white flex flex-col items-center space-y-3 sm:flex-row sm:justify-between">
+    <div className="font-fira p-1 xs:p-4 m-2 sm:px-14 md:px-[80px] lg:px-[150px] text-white flex flex-col items-center space-y-3 sm:flex-row sm:justify-between">
       <div className="header-div-container flex items-center space-x-2">
         <HomeLogo />
         <p className="font-bold text-white font-fira">Vinay</p>
