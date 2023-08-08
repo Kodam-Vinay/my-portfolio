@@ -4,9 +4,8 @@ import "./index.css";
 
 const ShowNavigationMenu = (props) => {
   const { hamburgerClicked, setHamburgerClicked } = props;
-
   return (
-    <div className="md:hidden pl-4 pb-4 w-full bg-gray-900 absolute z-10 flex flex-col add-transition-to-naviagtion">
+    <div className="md:hidden pl-4 pb-4 w-full bg-gray-900 absolute z-10 flex flex-col h-52 add-animation-to-navigation-menu">
       <button
         className="cursor-pointer md:hidden h-8 self-end mt-2 mr-2"
         onClick={() => setHamburgerClicked((prev) => !prev)}

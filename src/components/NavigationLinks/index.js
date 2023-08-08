@@ -39,29 +39,6 @@ const NavigationLinks = (props) => {
           isActive={eachItem.id === activeId}
         />
       ))}
-      {/* <li
-        className={`text-[#ABB2BF] font-fira hover:text-white cursor-pointer md:add_zoom ${props.className}`}
-      >
-        <Link to="#home">Home</Link>
-      </li>
-
-      <li
-        className={`text-[#ABB2BF] font-fira hover:text-white cursor-pointer md:add_zoom ${props.className}`}
-      >
-        <Link to="#projects">Works</Link>
-      </li>
-
-      <li
-        className={`text-[#ABB2BF] font-fira hover:text-white cursor-pointer md:add_zoom ${props.className}`}
-      >
-        <Link to="#about">About-Me</Link>
-      </li>
-
-      <li
-        className={`text-[#ABB2BF] font-fira hover:text-white cursor-pointer md:add_zoom ${props.className}`}
-      >
-        <Link to="#contact">Contact</Link>
-      </li> */}
     </ul>
   );
 };

@@ -1,12 +1,13 @@
-.add-transition-to-naviagtion {
-  animation: animate-div 5s 1.25s 1 alternate;
+.add-animation-to-navigation-menu {
+  scroll-behavior: smooth;
+  animation: navigation-component 1 0.5s normal;
 }
 
-@keyframes animate-div {
+@keyframes navigation-component {
   from {
-    transform: scale(1);
+    height: 0%;
   }
   to {
-    transform: scale(1.5);
+    height: 208px;
   }
 }
