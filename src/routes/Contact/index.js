@@ -91,6 +91,7 @@ const Contact = () => {
             type="submit"
             name="Success ✅"
             className="px-3 mt-2 bg-green-300"
+            isDisabledTrue={true}
           />
         );
       case constApiStatus.failure:
@@ -129,12 +130,14 @@ const Contact = () => {
                 placeholder="Name"
                 onChange={(event) => setName(event.target.value)}
                 value={name}
+                isDisabledTrue={apiStatus.status === constApiStatus.success}
               />
               <ReusableInput
                 type="email"
                 placeholder="Email"
                 onChange={(event) => setEmail(event.target.value)}
                 value={email}
+                isDisabledTrue={apiStatus.status === constApiStatus.success}
               />
             </div>
             <ReusableInput
@@ -142,6 +145,7 @@ const Contact = () => {
               placeholder="Title"
               onChange={(event) => setTitle(event.target.value)}
               value={title}
+              isDisabledTrue={apiStatus.status === constApiStatus.success}
             />
             <textarea
               className="bg-transparent border p-2 w-full outline-blue-500 text-white rounded-md focus:bg-gray-800"
@@ -149,6 +153,7 @@ const Contact = () => {
               placeholder="Message"
               onChange={(event) => setMessage(event.target.value)}
               value={message}
+              disabled={apiStatus.status === constApiStatus.success}
             />
             {renderButton()}
             <p className="text-red-500">

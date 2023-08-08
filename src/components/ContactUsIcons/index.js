@@ -7,7 +7,7 @@ import { LINKEDIN_URL, GITHUB_URL } from "../../config";
 const ContactUsIcons = (props) => {
   const { className, nohover, addBgColor } = props;
   const onClickMail = () => {
-    window.location = "mailto:vinay.kodam112@gmail.com";
+    window.location = "mailto:ccvinaykumarkodam@outlook.com";
   };
   return (
     <div className={`${className} z-10`}>

@@ -1,5 +1,6 @@
 const ReusableInput = (props) => {
-  const { placeholder, className, onChange, type, value } = props;
+  const { placeholder, className, onChange, type, value, isDisabledTrue } =
+    props;
   return (
     <input
       type={type}
@@ -7,6 +8,7 @@ const ReusableInput = (props) => {
       onChange={onChange}
       placeholder={placeholder}
       value={value}
+      disabled={isDisabledTrue}
     />
   );
 };

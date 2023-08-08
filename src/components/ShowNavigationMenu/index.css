@@ -1,0 +1,12 @@
+.add-transition-to-naviagtion {
+  animation: animate-div 5s 1.25s 1 alternate;
+}
+
+@keyframes animate-div {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
