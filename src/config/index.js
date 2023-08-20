@@ -20,3 +20,5 @@ export const CONTACT_API_URL =
 
 export const PROJECTS_API_URL =
   "https://portfoli-projects-api-production.up.railway.app/projects";
+
+export const MAIL_URL = "mailto:contactvinaykumarkodam@gmail.com";
