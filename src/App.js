@@ -24,11 +24,18 @@ const AdminTable = lazy(() => import("./routes/AdminTable"));
 const RenderUi = () => {
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
   const isOnline = useOnline();
+  const onClickContextMenu = (event) => {
+    event.preventDefault();
+    return false;
+  };
   if (!isOnline) {
     return <OfflinePage />;
   }
   return (
-    <div className="bg-[#282C33] h-screen overflow-y-auto flex flex-col overflow-x-hidden scroll-m-0 scroll-p-0 add-animation-to-main-app">
+    <div
+      className="bg-[#282C33] h-screen overflow-y-auto flex flex-col overflow-x-hidden scroll-m-0 scroll-p-0 add-animation-to-main-app"
+      onContextMenu={onClickContextMenu}
+    >
       <div className="hidden md:flex flex-col w-14 items-center absolute space-y-2 ml-4">
         <StraightLine />
         <ContactUsIcons applyStroke="hover:stroke-blue-500" />

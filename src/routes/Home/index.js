@@ -27,9 +27,7 @@ const Home = () => {
           <Cursor cursorStyle="🚀" />
         </h1>
 
-        <p className="text-xl md:text-2xl text-[#ABB2BF]">
-          He crafts responsive websites where technologies meet creativity
-        </p>
+        <p className="text-xl md:text-2xl text-[#ABB2BF]"></p>
         <Link to="#contact">
           <ReusableButton
             type="button"

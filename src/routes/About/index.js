@@ -16,15 +16,20 @@ const About = () => {
             <AboutImage className="h-52 sm:h-64 md:h-80" />
           </div>
           <div className="my-data text-white mt-3 md:w-80 lg:w-[400px] xl:w-1/2 text-sm xs:text-[16px] sm:text-lg md:text-xl lg:text-2xl">
-            <p>
-              Iam Vinay Kumar Kodam, Iam a{" "}
+            <p className="overflow-y-auto h-72">
+              I am Vinay Kumar Kodam, a graduate of{" "}
               <span className="text-blue-300 font-[600]">
-                frontend/fullstack
+                {" "}
+                B.Sc(MPCS) With 8.18CGPA from Satavahana University, Karimnagar.
               </span>{" "}
-              web delveoper I have good hands On Experience with Technologies
-              like{" "}
+              and a frontend/full-stack web developer, I have one year hands On
+              Experience with Technologies React.js, Node.js, Express.js, REST
+              APIs, MongoDB, Javascript, TailwindCSS, Github, Python, and SQLite
+              Iam Vinay Kumar Kodam, a graduate from B.Sc(MPCS) a web delveoper
+              I have one year hands On Experience with Technologies{" "}
               <span className="text-blue-300 font-[600]">
-                React.js, Node.js, Python, SQLite and MongoDB
+                React.js, Node.js,Express.js, REST APIs, MongoDB, Javascript,
+                TailwindCSS,Github, Python, and SQLite
               </span>
             </p>
             <Link to={GDRIVE_LINK} target="_blank">
