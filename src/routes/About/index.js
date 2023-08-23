@@ -23,7 +23,7 @@ const About = () => {
                 B.Sc(MPCS) With 8.18CGPA from Satavahana University, Karimnagar.
               </span>{" "}
               and a frontend/full-stack web developer, I have one year hands On
-              Experience with Technologies Like
+              Experience with Technologies Like{" "}
               <span className="text-blue-300 font-[600]">
                 React.js, Node.js, Express.js, REST APIs, MongoDB, Javascript,
                 TailwindCSS, Github, Python, and SQLite
