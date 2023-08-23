@@ -23,13 +23,10 @@ const About = () => {
                 B.Sc(MPCS) With 8.18CGPA from Satavahana University, Karimnagar.
               </span>{" "}
               and a frontend/full-stack web developer, I have one year hands On
-              Experience with Technologies React.js, Node.js, Express.js, REST
-              APIs, MongoDB, Javascript, TailwindCSS, Github, Python, and SQLite
-              Iam Vinay Kumar Kodam, a graduate from B.Sc(MPCS) a web delveoper
-              I have one year hands On Experience with Technologies{" "}
+              Experience with Technologies Like
               <span className="text-blue-300 font-[600]">
-                React.js, Node.js,Express.js, REST APIs, MongoDB, Javascript,
-                TailwindCSS,Github, Python, and SQLite
+                React.js, Node.js, Express.js, REST APIs, MongoDB, Javascript,
+                TailwindCSS, Github, Python, and SQLite
               </span>
             </p>
             <Link to={GDRIVE_LINK} target="_blank">
