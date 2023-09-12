@@ -13,7 +13,7 @@ export const PROFILE_IMG_URL =
   "https://res.cloudinary.com/dwgpba5n2/image/upload/v1691046969/portfolio/profile-image-logo.webp";
 
 export const GDRIVE_LINK =
-  "https://drive.google.com/file/d/1upcLOB6vHlEWG6T1FEAtahWbOzV1b-Bb/view?usp=sharing";
+  "https://drive.google.com/file/d/1WviKNFHfL6n9pQVVzCA5itMX8RkqLGhn/view?usp=sharing";
 
 export const CONTACT_API_URL =
   "https://portfoli-projects-api-production.up.railway.app/contact-details";
