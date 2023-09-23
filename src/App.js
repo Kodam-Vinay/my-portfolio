@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { lazy, useState, Suspense } from "react";
+import { lazy, useState, Suspense, useEffect } from "react";
 import "./App.css";
 import Home from "./routes/Home";
 import About from "./routes/About";
@@ -18,47 +18,95 @@ import Footer from "./components/Footer";
 
 // importing userDefined Hook
 import useOnline from "./utils/useOnline";
+import ScrollContext from "./utils/ScrollContext";
+import useActiveIdWithScroll from "./utils/useActiveIdWithScroll";
 
 const AdminTable = lazy(() => import("./routes/AdminTable"));
 
+const navligationLinksList = [
+  {
+    id: "Home",
+    value: "/",
+  },
+  {
+    id: "Works",
+    value: "projects",
+  },
+  {
+    id: "About-Me",
+    value: "about",
+  },
+  {
+    id: "Contact",
+    value: "contact",
+  },
+];
+
 const RenderUi = () => {
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
+  const [activeId, setActiveId] = useState(navligationLinksList[0].value);
+  // console.log(activeId);
   const isOnline = useOnline();
   const onClickContextMenu = (event) => {
     event.preventDefault();
     return false;
   };
+  const [isWindowScrolled, setWindowScrolled] = useState(false);
+  const handleScroll = () => {
+    if (window.scrollY > 25) {
+      setWindowScrolled(true);
+    } else if (window.scrollY < 25) {
+      setWindowScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+  useActiveIdWithScroll(navligationLinksList, setActiveId);
   if (!isOnline) {
     return <OfflinePage />;
   }
   return (
-    <div
-      className="bg-[#282C33] h-screen overflow-y-auto flex flex-col overflow-x-hidden scroll-m-0 scroll-p-0 add-animation-to-main-app"
-      onContextMenu={onClickContextMenu}
+    <ScrollContext.Provider
+      value={{
+        activeId: activeId,
+        setActiveId: setActiveId,
+        navligationLinksList: navligationLinksList,
+      }}
     >
-      <div className="hidden md:flex flex-col w-14 items-center absolute space-y-2 ml-4">
-        <StraightLine />
-        <ContactUsIcons applyStroke="hover:stroke-blue-500" />
-      </div>
-      <Header
-        hamburgerClicked={hamburgerClicked}
-        setHamburgerClicked={setHamburgerClicked}
-      />
-      {hamburgerClicked && (
-        <ShowNavigationMenu
+      <div
+        className={`bg-[#282C33] overflow-y-auto flex flex-col overflow-x-hidden add-animation-to-main-app`}
+        onContextMenu={onClickContextMenu}
+      >
+        <div className="hidden md:flex flex-col w-14 items-center fixed space-y-2 ml-4">
+          <StraightLine />
+          <ContactUsIcons applyStroke="hover:stroke-blue-500" />
+        </div>
+        <Header
+          isWindowScrolled={isWindowScrolled}
           hamburgerClicked={hamburgerClicked}
           setHamburgerClicked={setHamburgerClicked}
         />
-      )}
-      <Home />
-      <QuoteContainer />
-      <Skills />
-      <Projects />
-      <About />
-      <Contact />
-      <hr className="mt-10" />
-      <Footer />
-    </div>
+        {hamburgerClicked && (
+          <ShowNavigationMenu
+            hamburgerClicked={hamburgerClicked}
+            setHamburgerClicked={setHamburgerClicked}
+          />
+        )}
+        <div className="mt-16">
+          <Home />
+          <QuoteContainer />
+          <Skills />
+          <Projects />
+          <About />
+          <Contact />
+          <hr className="mt-10" />
+          <Footer />
+        </div>
+      </div>
+    </ScrollContext.Provider>
   );
 };
 

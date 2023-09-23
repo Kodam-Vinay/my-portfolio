@@ -1,19 +1,36 @@
-import { HashLink as Link } from "react-router-hash-link";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
-
 const EachNavigationLink = (props) => {
-  const { naviagtionDetails, onClickNavigationLink, isActive } = props;
+  const { naviagtionDetails, isActive } = props;
   const { id, value } = naviagtionDetails;
-  const onClickLink = () => {
-    onClickNavigationLink(id);
+  const navigate = useNavigate();
+  const handleClickScroll = () => {
+    if (value === "/") {
+      navigate("/");
+      const element = document.getElementById(value);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("#" + value);
+      const element = document.getElementById(value);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
-  const applyColor = isActive ? "apply-navigation-link-color" : "";
   return (
     <li
-      className={`text-[#ABB2BF] font-fira hover:text-white cursor-pointer md:add_zoom ${props.className} ${applyColor}`}
-      onClick={onClickLink}
+      className={`text-[#ABB2BF] font-fira hover:text-white cursor-pointer md:add_zoom ${
+        props.className
+      } ${
+        isActive
+          ? "text-blue-500 font-bold md:border-b-2 md:border-blue-500"
+          : ""
+      }`}
+      onClick={handleClickScroll}
     >
-      <Link to={`#${value}`}>{id}</Link>
+      {id}
     </li>
   );
 };

@@ -14,23 +14,10 @@
 
 @keyframes main-component-animation {
   from {
-    padding: 100%;
+    margin: 100%;
   }
   to {
-    padding: 0%;
-  }
-}
-
-.add-animation-to-navigation-menu-to-top {
-  scroll-behavior: smooth;
-  animation: navigation-component 1 0.5s reverse;
-}
-
-@keyframes navigation-component {
-  from {
-    height: 35%;
-  }
-  to {
-    height: 0%;
+    margin: 0%;
+    top: 0%;
   }
 }

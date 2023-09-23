@@ -1,22 +1,30 @@
-.apply-animation {
-  transform: rotateX(10deg);
-  transform: rotateY(15deg);
-  transform: rotateZ(15deg);
-  transition: var(--transition);
-}
-
 .profile-pic-background {
   background: linear-gradient(to top, #717780, #a0a9b8);
 }
 
-.apply-animation:hover {
-  transform: rotateX(0deg);
-  transform: rotateY(0deg);
-  transform: rotateZ(0deg);
-  transition: var(--transition);
+.apply-forward-spin-animation {
+  animation-duration: 1s;
+  animation-name: rotate-forward;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-iteration-count: 1;
 }
 
-.apply-position-animation:hover {
+@keyframes rotate-forward {
+  from {
+    transform: rotateX(0deg);
+    transform: rotateY(0deg);
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateX(10deg);
+    transform: rotateY(15deg);
+    transform: rotateZ(15deg);
+  }
+}
+
+.apply-reverse-spin-animation {
   animation-duration: 1s;
   animation-name: slidein;
   animation-direction: normal;
