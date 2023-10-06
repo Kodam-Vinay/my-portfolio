@@ -23,7 +23,6 @@ const Projects = () => {
         technolgies: eachItem.technolgies,
         websiteUrl: eachItem.website_url,
       }));
-
       setProjectsData(objectData);
     } catch (error) {
       throw new Error(error);

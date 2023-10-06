@@ -2,8 +2,6 @@ import HeadingReusableCode from "../../utils/HeadingReusableCode";
 import DesignBackgroundImage1 from "../svgs/DesignBackgroundImage1";
 import DesignBackgroundImage2 from "../svgs/DesignBackgroundImage2";
 
-const skillsList = {};
-
 const Skills = () => {
   return (
     <div className="font-fira p-1 xs:p-4 mt-4 sm:px-14 md:px-[80px] lg:px-[160px]">

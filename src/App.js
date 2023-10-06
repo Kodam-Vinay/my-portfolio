@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { lazy, useState, Suspense, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./routes/Home";
 import About from "./routes/About";
@@ -20,8 +20,10 @@ import Footer from "./components/Footer";
 import useOnline from "./utils/useOnline";
 import ScrollContext from "./utils/ScrollContext";
 import useActiveIdWithScroll from "./utils/useActiveIdWithScroll";
+import AdminLogin from "./routes/AdminLogin";
+import AdminTableProtectedRoute from "./utils/AdminTableProtectedRoute";
 
-const AdminTable = lazy(() => import("./routes/AdminTable"));
+import AdminTable from "./routes/AdminTable";
 
 const navligationLinksList = [
   {
@@ -45,7 +47,6 @@ const navligationLinksList = [
 const RenderUi = () => {
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
   const [activeId, setActiveId] = useState(navligationLinksList[0].value);
-  // console.log(activeId);
   const isOnline = useOnline();
   const onClickContextMenu = (event) => {
     event.preventDefault();
@@ -120,11 +121,15 @@ const router = createBrowserRouter([
         element: <RenderUi />,
       },
       {
+        path: "/admin-auth",
+        element: <AdminLogin />,
+      },
+      {
         path: "/sercret-admin-table",
         element: (
-          <Suspense fallback={<h1>Loading .....</h1>}>
+          <AdminTableProtectedRoute>
             <AdminTable />
-          </Suspense>
+          </AdminTableProtectedRoute>
         ),
       },
     ],

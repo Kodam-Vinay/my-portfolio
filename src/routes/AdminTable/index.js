@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import EachContact from "../../components/EachContact";
 import { HashLoader } from "react-spinners";
 import { CONTACT_API_URL } from "../../config";
+import ReusableButton from "../../utils/ReusableButton";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const constApiStatus = {
   initial: "INITIAL",
@@ -11,6 +14,7 @@ const constApiStatus = {
 };
 
 const AdminTable = () => {
+  const navigate = useNavigate();
   const [userContactDetails, setUserContactDetails] = useState({
     status: constApiStatus.initial,
     data: [],
@@ -44,7 +48,7 @@ const AdminTable = () => {
         }));
       }
     } catch (error) {
-      console.log("error happend");
+      console.log("error");
     }
   };
 
@@ -63,12 +67,24 @@ const AdminTable = () => {
   const FailureView = () => {
     <div>error</div>;
   };
+  const onClickLogout = () => {
+    const response = window.confirm("Are You Sure You want to Logout");
+    if (response) {
+      Cookies.remove("loginWebToken");
+      navigate("/admin-auth");
+    }
+  };
   const SuccessView = () => {
     return (
-      <div className="p-2 font-sans">
-        <h1 className="font-bold text-2xl text-center">
-          User Contact Details Table
-        </h1>
+      <div className="p-2 font-sans flex flex-col">
+        <div className="flex items-center justify-between">
+          <h1 className="font-bold text-2xl">User Contact Details Table</h1>
+          <ReusableButton
+            name="Logout"
+            className="self-end bg-gray-500 border-none"
+            onClick={onClickLogout}
+          />
+        </div>
         <table className="mt-10 border table-auto w-full">
           <tbody>
             <tr className="bg-gray-300 add_table_border h-10">
