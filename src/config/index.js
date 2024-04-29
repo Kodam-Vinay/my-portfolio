@@ -14,8 +14,6 @@ export const PROFILE_IMG_URL =
 
 export const DOWNLOAD_LINK = "https://drive.google.com/uc?export=download&id=";
 
-export const CONTACT_API_URL =
-  "https://portfoli-projects-api-production.up.railway.app/contact-details";
+export const CONTACT_API_URL = "http://18.142.240.2:8000/contact-details";
 
-export const PROJECTS_API_URL =
-  "https://portfoli-projects-api-production.up.railway.app/projects";
+export const PROJECTS_API_URL = "http://18.142.240.2:8000/projects";
