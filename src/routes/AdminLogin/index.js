@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 import ReusableButton from "../../utils/ReusableButton";
 import { useState } from "react";
-import { PROJECTS_API_URL } from "../../config";
+import { API_URL } from "../../config";
 import { Navigate, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
@@ -21,22 +21,27 @@ const AdminLogin = () => {
   };
 
   const getLogin = async () => {
-    const apiUrl = PROJECTS_API_URL.replace("/projects", "/secret-login");
-    const userDetails = { userName, password };
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(userDetails),
-    };
-    const response = await fetch(apiUrl, options);
-    const data = await response.json();
-    if (response.ok) {
-      storeToken(data?.jwt);
-    } else {
-      setIsLoginFailure(true);
-      setErrorMessage(data?.message);
+    try {
+      const apiUrl = API_URL + "users/login";
+      const userDetails = { user_name: userName, password };
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(userDetails),
+      };
+      const response = await fetch(apiUrl, options);
+      const data = await response.json();
+      if (response?.ok) {
+        storeToken(data?.data?.token);
+      } else {
+        setIsLoginFailure(true);
+        setErrorMessage(data?.message);
+        navigate("/error");
+      }
+    } catch (error) {
+      navigate("/error");
     }
   };
 
@@ -46,6 +51,7 @@ const AdminLogin = () => {
       getLogin();
     }
   };
+
   if (jwtToken !== undefined) return <Navigate to="/sercret-admin-table" />;
   return (
     <div className="flex flex-col justify-center w-full h-[96vh] items-center bg-[#282C33]">

@@ -2,7 +2,7 @@ import HeadingReusableCode from "../../utils/HeadingReusableCode";
 import ReusableButton from "../../utils/ReusableButton";
 import AboutImage from "../../components/svgs/AboutImage";
 import DesignBackgroundImage2 from "../../components/svgs/DesignBackgroundImage2";
-import { DOWNLOAD_LINK } from "../../config";
+import { DOCX_URL, CLOUDINARY_ACCESS_URL, PDF_URL } from "../../config";
 import { useState } from "react";
 import DownloadIcon from "../../components/svgs/DownloadIcon";
 
@@ -70,9 +70,7 @@ const About = () => {
                 />
                 {isMouseHover && (
                   <div className="flex flex-col space-y-1 mt-3">
-                    <a
-                      href={DOWNLOAD_LINK + "1WviKNFHfL6n9pQVVzCA5itMX8RkqLGhn"}
-                    >
+                    <a href={CLOUDINARY_ACCESS_URL + PDF_URL}>
                       <ReusableButton
                         type="button"
                         name={
@@ -84,9 +82,7 @@ const About = () => {
                         onClick={() => setMouseOver(false)}
                       />
                     </a>
-                    <a
-                      href={DOWNLOAD_LINK + "1FRdmIo8g-Dolh2QESddUSAmsdK7JBIUl"}
-                    >
+                    <a href={CLOUDINARY_ACCESS_URL + DOCX_URL}>
                       <ReusableButton
                         type="button"
                         name={

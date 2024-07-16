@@ -132,6 +132,10 @@ const router = createBrowserRouter([
           </AdminTableProtectedRoute>
         ),
       },
+      {
+        path: "/error",
+        element: <ErrorPage />,
+      },
     ],
   },
 ]);

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import EachContact from "../../components/EachContact";
 import { HashLoader } from "react-spinners";
-import { CONTACT_API_URL } from "../../config";
+import { API_URL } from "../../config";
 import ReusableButton from "../../utils/ReusableButton";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
@@ -30,17 +30,26 @@ const AdminTable = () => {
       ...prev,
       status: constApiStatus.inProgress,
     }));
+    const coockie = await Cookies.get("loginWebToken");
     try {
-      const apiUrl = CONTACT_API_URL;
-      const data = await fetch(apiUrl);
-      const jsonData = await data.json();
-      if (data.ok) {
+      const apiUrl = API_URL + "contacts/all";
+      const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${coockie}`,
+        },
+      };
+      const res = await fetch(apiUrl, options);
+      const jsonData = await res.json();
+      if (res?.ok) {
         setUserContactDetails((prev) => ({
           ...prev,
-          data: jsonData,
+          data: jsonData?.data,
           status: constApiStatus.success,
         }));
       } else {
+        navigate("/error");
         setUserContactDetails((prev) => ({
           ...prev,
           error: "Error to fetch the data",
@@ -48,22 +57,27 @@ const AdminTable = () => {
         }));
       }
     } catch (error) {
-      console.log("error");
+      navigate("/error");
     }
   };
 
   const onClickDelete = async (id) => {
     try {
-      const apiUrl = CONTACT_API_URL + `/${id}`;
+      const apiUrl = API_URL + `contacts/${id}`;
       const options = {
         method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${Cookies.get("loginWebToken")}`,
+        },
       };
       await fetch(apiUrl, options);
       getData();
     } catch (error) {
-      console.log("error");
+      navigate("/error");
     }
   };
+
   const FailureView = () => {
     <div>error</div>;
   };
@@ -88,6 +102,7 @@ const AdminTable = () => {
         <table className="mt-10 border table-auto w-full">
           <tbody>
             <tr className="bg-gray-300 add_table_border h-10">
+              <th className="add_table_border w-[15%]">S.No</th>
               <th className="add_table_border w-[15%]">Name</th>
               <th className="add_table_border w-[15%]">Email</th>
               <th className="add_table_border w-[20%]">Title</th>
@@ -96,8 +111,9 @@ const AdminTable = () => {
               <th className="add_table_border w-[10%]"></th>
             </tr>
             {userContactDetails?.data?.length > 0 &&
-              userContactDetails?.data?.map((eachContact) => (
+              userContactDetails?.data?.map((eachContact, index) => (
                 <EachContact
+                  number={index + 1}
                   key={eachContact._id}
                   contactDetails={eachContact}
                   onClickDelete={onClickDelete}

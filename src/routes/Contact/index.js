@@ -5,7 +5,8 @@ import ReusableButton from "../../utils/ReusableButton";
 import ReusableInput from "../../utils/ReusableInput";
 import DesignBackgroundImage2 from "../../components/svgs/DesignBackgroundImage2";
 import ContactUsImage from "../../components/svgs/ContactUsImage";
-import { CONTACT_API_URL } from "../../config";
+import { API_URL } from "../../config";
+import { useNavigate } from "react-router-dom";
 
 const constApiStatus = {
   initial: "INITIAL",
@@ -15,6 +16,7 @@ const constApiStatus = {
 };
 
 const Contact = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
@@ -46,7 +48,7 @@ const Contact = () => {
       };
 
       try {
-        const apiUrl = CONTACT_API_URL;
+        const apiUrl = API_URL + "contacts/upload";
         const options = {
           method: "POST",
           headers: {
@@ -55,7 +57,7 @@ const Contact = () => {
           body: JSON.stringify(contactData),
         };
         const response = await fetch(apiUrl, options);
-        if (response.ok) {
+        if (response?.ok) {
           setApiStatus((prev) => ({
             ...prev,
             status: constApiStatus.success,
@@ -73,7 +75,7 @@ const Contact = () => {
           }));
         }
       } catch (error) {
-        console.log(error);
+        navigate("/error");
       }
     }
   };

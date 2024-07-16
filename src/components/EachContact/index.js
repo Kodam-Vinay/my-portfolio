@@ -2,20 +2,24 @@ import DeleteIcon from "../svgs/DeleteIcon";
 import EmailReplyLogo from "../svgs/EmailReplyLogo";
 
 const EachContact = (props) => {
-  const { contactDetails, onClickDelete } = props;
+  const { number, contactDetails, onClickDelete } = props;
   const { name, email, title, message, createdAt, _id } = contactDetails;
   const date = new Date(createdAt);
+
   const onClickDeleteIcon = () => {
     const response = window.confirm("Are you really want to delete this data");
     if (response) {
       onClickDelete(_id);
     }
   };
+
   const onClickReply = () => {
     window.location = `mailto:${email}`;
   };
+
   return (
     <tr className="bg-gray-100 add_table_border min-h-10">
+      <td className="add_table_border w-[15%]">{number}</td>
       <td className="add_table_border w-[15%]">{name}</td>
       <td className="add_table_border w-[15%]">{email}</td>
       <td className="add_table_border w-[20%]">{title}</td>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./style.css";
-import { PROFILE_IMG_URL } from "../../config";
+import { CLOUDINARY_ACCESS_URL, IMG_URL } from "../../config";
 
 const ProfilePic = () => {
   const [isMouseHovered, setMouseHovered] = useState(false);
@@ -20,7 +20,7 @@ const ProfilePic = () => {
         }`}
       >
         <img
-          src={PROFILE_IMG_URL}
+          src={CLOUDINARY_ACCESS_URL + IMG_URL}
           alt="bgImage"
           className="h-[242px] w-full"
           title="profile-image"

@@ -3,29 +3,43 @@ import { useState } from "react";
 import EachProject from "../../components/EachProject";
 import HeadingReusableCode from "../../utils/HeadingReusableCode";
 import Shimmer from "../../components/Shimmer";
-import { PROJECTS_API_URL } from "../../config";
+import { API_URL } from "../../config";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
+  const navigate = useNavigate();
   const [projectsData, setProjectsData] = useState([]);
   useEffect(() => {
     getData();
   }, []);
   const getData = async () => {
     try {
-      const data = await fetch(PROJECTS_API_URL);
-      const jsonData = await data.json();
-      const objectData = jsonData.map((eachItem) => ({
-        id: eachItem._id,
-        cloudinaryImageId: eachItem.cloudinary_image_id,
-        description: eachItem.description,
-        name: eachItem.name,
-        githubUrl: eachItem.github_url,
-        technolgies: eachItem.technolgies,
-        websiteUrl: eachItem.website_url,
-      }));
-      setProjectsData(objectData);
+      const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${Cookies.get("loginWebToken")}`,
+        },
+      };
+      const res = await fetch(API_URL + "projects/all", options);
+      const jsonData = await res.json();
+      if (res?.ok && jsonData?.data) {
+        const objectData = jsonData?.data?.map((eachItem) => ({
+          id: eachItem._id,
+          cloudinaryImageId: eachItem.cloudinary_image_id,
+          description: eachItem.description,
+          name: eachItem.name,
+          githubUrl: eachItem.github_url,
+          technolgies: eachItem.technolgies,
+          websiteUrl: eachItem.website_url,
+        }));
+        setProjectsData(objectData);
+      } else {
+        setProjectsData([]);
+      }
     } catch (error) {
-      throw new Error(error);
+      navigate("/error");
     }
   };
   return (
