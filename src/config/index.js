@@ -17,3 +17,22 @@ export const PDF_URL = "vinay_kumar_kodam_resume_mkosy8.pdf";
 
 export const DOCX_URL = "vinay_kumar_kodam_resume_bjakrs.docx";
 export const IMG_URL = "profile-image-logo.webp";
+
+export const NAVIGATION_LINKS = [
+  {
+    id: "Home",
+    value: "/",
+  },
+  {
+    id: "Works",
+    value: "projects",
+  },
+  {
+    id: "About-Me",
+    value: "about",
+  },
+  {
+    id: "Contact",
+    value: "contact",
+  },
+];

@@ -4,9 +4,10 @@ import ProfilePic from "../../components/ProfilePic";
 import { HashLink as Link } from "react-router-hash-link";
 import TypingEffect from "../../components/TypingEffect";
 
-const Home = () => {
+const Home = ({ ref }) => {
   return (
     <div
+      ref={ref}
       className="font-fira p-3 flex flex-col items-center md:items-start md:flex-row md:justify-around md:px-20 lg:px-40 xl:px-20"
       id="/"
     >
