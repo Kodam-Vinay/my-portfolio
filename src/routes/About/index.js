@@ -82,7 +82,7 @@ const About = () => {
                         onClick={() => setMouseOver(false)}
                       />
                     </a>
-                    <a href={CLOUDINARY_ACCESS_URL + DOCX_URL}>
+                    <a href={CLOUDINARY_ACCESS_URL.replace("image","raw") + DOCX_URL}>
                       <ReusableButton
                         type="button"
                         name={
