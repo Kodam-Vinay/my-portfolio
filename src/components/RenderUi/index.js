@@ -19,7 +19,6 @@ const RenderUi = () => {
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
   const [activeId, setActiveId] = useState(NAVIGATION_LINKS[0].value);
   const isOnline = useOnline();
-  const [isWindowScrolled, setWindowScrolled] = useState(false);
 
   const onClickContextMenu = (event) => {
     event.preventDefault();
@@ -36,15 +35,8 @@ const RenderUi = () => {
   }, [activeId]);
 
   useEffect(() => {
-    if (isWindowScrolled) {
-      const timer = setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 10000);
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [isWindowScrolled]);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [window.onload]);
 
   useActiveIdWithScroll(NAVIGATION_LINKS, setActiveId);
 
@@ -69,7 +61,6 @@ const RenderUi = () => {
           <ContactUsIcons applyStroke="hover:stroke-blue-500" />
         </div>
         <Header
-          isWindowScrolled={isWindowScrolled}
           hamburgerClicked={hamburgerClicked}
           setHamburgerClicked={setHamburgerClicked}
         />
