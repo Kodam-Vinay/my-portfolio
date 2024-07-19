@@ -19,6 +19,7 @@ const RenderUi = () => {
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
   const [activeId, setActiveId] = useState(NAVIGATION_LINKS[0].value);
   const isOnline = useOnline();
+  const [isWindowScrolled, setWindowScrolled] = useState(false);
 
   const onClickContextMenu = (event) => {
     event.preventDefault();
@@ -61,6 +62,7 @@ const RenderUi = () => {
           <ContactUsIcons applyStroke="hover:stroke-blue-500" />
         </div>
         <Header
+          isWindowScrolled={isWindowScrolled}
           hamburgerClicked={hamburgerClicked}
           setHamburgerClicked={setHamburgerClicked}
         />
