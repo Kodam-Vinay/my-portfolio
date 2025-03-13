@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CLOUDINARY_IMG_URL } from "../../config";
+import { CLOUDINARY_ACCESS_URL } from "../../config";
 import GithubIcon from "../svgs/GithubIcon";
 import WebsiteLogo from "../svgs/WebsiteLogo";
 import "./style.css";
@@ -17,7 +17,7 @@ const EachProject = (props) => {
   return (
     <li className="border w-full xs:min-w-[240px] xs:max-w-[250px] md:min-w-[260px] md:max-w-[300px] text-white font-fira p-2 hover:bg-gray-800 rounded-md hover:shadow-lg hover:shadow-white add_zoom">
       <img
-        src={CLOUDINARY_IMG_URL + cloudinaryImageId}
+        src={CLOUDINARY_ACCESS_URL + "projects-images/" + cloudinaryImageId}
         alt={name}
         title={name}
         className="h-40 w-full"

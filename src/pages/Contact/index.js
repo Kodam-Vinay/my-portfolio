@@ -57,6 +57,7 @@ const Contact = () => {
           body: JSON.stringify(contactData),
         };
         const response = await fetch(apiUrl, options);
+        const data = await response.json();
         if (response?.ok) {
           setApiStatus((prev) => ({
             ...prev,
@@ -70,7 +71,7 @@ const Contact = () => {
         } else {
           setApiStatus((prev) => ({
             ...prev,
-            errorMsg: "Please Enter Valid Details",
+            errorMsg: data?.message || "Please Enter Valid Details",
             status: constApiStatus.failure,
           }));
         }
