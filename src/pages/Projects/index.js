@@ -4,7 +4,6 @@ import EachProject from "../../components/EachProject";
 import HeadingReusableCode from "../../utils/HeadingReusableCode";
 import Shimmer from "../../components/Shimmer";
 import { API_URL } from "../../config";
-import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
@@ -19,7 +18,7 @@ const Projects = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${Cookies.get("loginWebToken")}`,
+          Authorization: `Bearer ${process.env.REACT_APP_PROJECT_ACCESS_TOKEN}`,
         },
       };
       const res = await fetch(API_URL + "projects/all", options);
